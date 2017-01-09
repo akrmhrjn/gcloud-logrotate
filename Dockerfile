@@ -1,6 +1,6 @@
 FROM google/cloud-sdk
 MAINTAINER sitehawk
-RUN apk --update add logrotate
+#RUN apt-get update && apt-get install logrotate
 RUN echo "*/5 *	* * *	/usr/sbin/logrotate /etc/logrotate.conf" >> /etc/crontabs/root
 ADD logrotate.conf /etc/logrotate.conf
 
